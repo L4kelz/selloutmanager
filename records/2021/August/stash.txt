@@ -1,0 +1,36 @@
+﻿PD Name: Qsl Wireless.
+Date: August 28, 2021
+PAR: 90.32
+Target / Actual/ % Ach
+
+DAILY Sell out
+Smart load : 569,150
+
+Daily Recruitment
+Smart : 4
+
+MTD Sell-out
+Smart load :  27,975,759 / 12,947,153 / 46.28 % ( -44.04 )
+
+MTD Recruitment
+Smart : 65
+________________________
+
+PD Name: Qsl Wireless
+Date: August 28, 2021
+PAR:  90.32
+
+DAILY Sell out
+Smart load : 569,150
+-------
+
+L1 Actual: 569,150
+L1 Target: 902,444
+% Ach : 63.07
+
+MTD
+Target / Actual / % Ach 
+Smart load : 27,975,759 / 12,947,153 / 46.28 % ( -44.04 )
+__________________________
+
+Deficit: -15,028,606

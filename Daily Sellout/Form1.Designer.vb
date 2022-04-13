@@ -1595,7 +1595,7 @@ Partial Class Form1
         Me.loadtrend.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.loadtrend.Font = New System.Drawing.Font("Volte", 15.75!)
         Me.loadtrend.ForeColor = System.Drawing.Color.White
-        Me.loadtrend.Location = New System.Drawing.Point(540, 67)
+        Me.loadtrend.Location = New System.Drawing.Point(524, 96)
         Me.loadtrend.Margin = New System.Windows.Forms.Padding(0)
         Me.loadtrend.Name = "loadtrend"
         Me.loadtrend.Size = New System.Drawing.Size(176, 48)
@@ -1614,7 +1614,7 @@ Partial Class Form1
         Me.omms.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.omms.Font = New System.Drawing.Font("Volte", 15.75!)
         Me.omms.ForeColor = System.Drawing.Color.White
-        Me.omms.Location = New System.Drawing.Point(319, 67)
+        Me.omms.Location = New System.Drawing.Point(294, 96)
         Me.omms.Margin = New System.Windows.Forms.Padding(0)
         Me.omms.Name = "omms"
         Me.omms.Size = New System.Drawing.Size(176, 48)
@@ -1633,7 +1633,7 @@ Partial Class Form1
         Me.loadledger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.loadledger.Font = New System.Drawing.Font("Volte", 15.75!)
         Me.loadledger.ForeColor = System.Drawing.Color.White
-        Me.loadledger.Location = New System.Drawing.Point(100, 67)
+        Me.loadledger.Location = New System.Drawing.Point(61, 96)
         Me.loadledger.Margin = New System.Windows.Forms.Padding(0)
         Me.loadledger.Name = "loadledger"
         Me.loadledger.Size = New System.Drawing.Size(176, 48)
@@ -1858,7 +1858,6 @@ Partial Class Form1
         Me.tab_db.Controls.Add(Me.showdetails)
         Me.tab_db.Controls.Add(Me.DataGridView2)
         Me.tab_db.Controls.Add(Me.RichTextBox1)
-        Me.tab_db.Controls.Add(Me.dbLabel9)
         Me.tab_db.Controls.Add(Me.dbbtnexportbymonth)
         Me.tab_db.Controls.Add(Me.Label22)
         Me.tab_db.Controls.Add(Me.dbbtnviewbymonth)
@@ -1958,6 +1957,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.dblbl9)
         Me.GroupBox1.Controls.Add(Me.dblbl8)
         Me.GroupBox1.Controls.Add(Me.dblbl7)
+        Me.GroupBox1.Controls.Add(Me.dbLabel9)
         Me.GroupBox1.Controls.Add(Me.Label27)
         Me.GroupBox1.Controls.Add(Me.dbtb9)
         Me.GroupBox1.Controls.Add(Me.dblbl6)
@@ -2471,7 +2471,7 @@ Partial Class Form1
         'dbLabel9
         '
         Me.dbLabel9.AutoSize = True
-        Me.dbLabel9.Location = New System.Drawing.Point(365, 474)
+        Me.dbLabel9.Location = New System.Drawing.Point(26, -9)
         Me.dbLabel9.Name = "dbLabel9"
         Me.dbLabel9.Size = New System.Drawing.Size(25, 13)
         Me.dbLabel9.TabIndex = 19

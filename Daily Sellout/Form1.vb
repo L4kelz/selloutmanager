@@ -15,7 +15,10 @@ Imports System.Threading
 Imports Google.Apis.Drive.v2.Data
 Imports File = Google.Apis.Drive.v2.Data.File
 
+
 Public Class Form1
+
+
     Dim edit_connString As String = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:\Users\BRYNER\Documents\Visual Studio 2010\projects\Daily Sellout\Daily Sellout\bin\Debug\Items.accdb"
     Dim edit_Myconnection As OleDbConnection
     Dim edit_dbda As OleDbDataAdapter
@@ -147,7 +150,8 @@ Public Class Form1
 
             iloadmoto()
             'iloadmoto2()
-
+            homedb1()
+            homedb2()
             'DataGridView1.Rows(DataGridView1.RowCount - 1).Cells(2).Selected = True
             ako()
             etoitawagmo()
@@ -674,6 +678,360 @@ Public Class Form1
         End Try
     End Sub
 
+    Private Sub homedb1()
+        Try
+
+            Dim homedbtaon As String
+
+            homedbtaon = Format(DateTimePicker1.Value, "yyyy")
+            homedblbl1.Text = "YTD " & homedbtaon & ""
+
+            '===============================
+            'MONTH YTD
+            Dim homedbbuwan As Integer
+            Dim buwanstring As String
+            Dim a As Integer
+            a = Format(DateTimePicker1.Value, "MM")
+            homedbbuwan = a - 1
+
+            If homedbbuwan = 1 Then
+                buwanstring = "--"
+            ElseIf homedbbuwan = 2 Then
+                buwanstring = "February"
+            ElseIf homedbbuwan = 3 Then
+                buwanstring = "March"
+            ElseIf homedbbuwan = 4 Then
+                buwanstring = "April"
+            ElseIf homedbbuwan = 5 Then
+                buwanstring = "May"
+            ElseIf homedbbuwan = 6 Then
+                buwanstring = "June"
+            ElseIf homedbbuwan = 7 Then
+                buwanstring = "July"
+            ElseIf homedbbuwan = 8 Then
+                buwanstring = "August"
+            ElseIf homedbbuwan = 9 Then
+                buwanstring = "September"
+            ElseIf homedbbuwan = 10 Then
+                buwanstring = "October"
+            ElseIf homedbbuwan = 11 Then
+                buwanstring = "November"
+            ElseIf homedbbuwan = 12 Then
+                buwanstring = "December"
+            End If
+            homedbmonthlbl1.Text = "(January - " & buwanstring & ")"
+            '===============================================
+            DataGridView3.RowHeadersVisible = False
+            Myconnection = New OleDbConnection
+            Myconnection.ConnectionString = connString
+            dbds = New DataSet
+            tables = dbds.Tables
+            'dbda = New OleDbDataAdapter("Select * from tblitems where DATE BETWEEN CDATE('01/01/2021') AND CDATE('05/20/2021') ORDER BY DATE DESC", Myconnection)
+            'dbda = New OleDbDataAdapter("Select SUM(SMARTLOAD) as sum_load from tblitems where DATE BETWEEN CDATE('01/01/2021') AND CDATE('05/20/2021')", Myconnection)
+            dbda = New OleDbDataAdapter("SELECT SUM(MTDSMART) as sum_load FROM tblitems o WHERE (YEAR(o.DATE) IN ('" & homedbtaon & "') AND MONTH(o.DATE) IN ('1','3','5','7','8','10','12') AND DAY(o.DATE) = '31')
+    OR (YEAR(o.DATE) IN ('" & homedbtaon & "') AND MONTH(o.DATE) IN ('4','6','9','11') AND DAY(o.DATE) = '30')
+    OR (YEAR(o.DATE) IN ('" & homedbtaon & "') AND MONTH(o.DATE) IN ('2') AND DAY(o.DATE) = '28')", Myconnection)
+            dbda.Fill(dbds, "tblitems")
+            Dim view As New DataView(tables(0))
+
+            source.DataSource = view
+            DataGridView3.DataSource = view
+
+
+            DataGridView3.Columns("ID").Visible = False
+            DataGridView3.Columns("MTDSUN").Visible = False
+            DataGridView3.Columns("SUNLOAD").Visible = False
+            DataGridView3.Columns("MTDRECRUITMENTSMART").Visible = False
+            DataGridView3.Columns("MTDRECRUITMENTSUN").Visible = False
+            DataGridView3.Columns("RECRUITMENTSMART").Visible = False
+            DataGridView3.Columns("RECRUITMENTSUN").Visible = False
+            DataGridView3.Columns("PAR").Visible = False
+
+            DataGridView3.Columns(6).DefaultCellStyle.Format = "N0"
+            DataGridView3.Columns(2).DefaultCellStyle.Format = "N0"
+
+
+
+        Catch ex As Exception
+            'MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub homedb2()
+        Try
+
+            Dim homedbtaon As String
+            Dim homedbtaonint As Long
+            Dim homedbtaona As Long
+            Dim homedbtaonx As Long
+
+            homedbtaon = Format(DateTimePicker1.Value, "yyyy")
+            homedbtaonint = homedbtaon
+
+            homedbtaona = homedbtaonint - 1
+
+            homedbtaonx = homedbtaona.ToString("#,##0")
+            homedblbl2.Text = "YTD " & homedbtaonx & ""
+
+            '===============================
+            'MONTH YTD
+            Dim homedbbulan As Integer
+            Dim buwanstring As String
+            Dim k As Integer
+            k = Format(DateTimePicker1.Value, "MM")
+            homedbbulan = k - 1
+
+            If homedbbulan = 1 Then
+                buwanstring = "--"
+            ElseIf homedbbulan = 2 Then
+                buwanstring = "February"
+            ElseIf homedbbulan = 3 Then
+                buwanstring = "March"
+            ElseIf homedbbulan = 4 Then
+                buwanstring = "April"
+            ElseIf homedbbulan = 5 Then
+                buwanstring = "May"
+            ElseIf homedbbulan = 6 Then
+                buwanstring = "June"
+            ElseIf homedbbulan = 7 Then
+                buwanstring = "July"
+            ElseIf homedbbulan = 8 Then
+                buwanstring = "August"
+            ElseIf homedbbulan = 9 Then
+                buwanstring = "September"
+            ElseIf homedbbulan = 10 Then
+                buwanstring = "October"
+            ElseIf homedbbulan = 11 Then
+                buwanstring = "November"
+            ElseIf homedbbulan = 12 Then
+                buwanstring = "December"
+            End If
+            homedbmonthlbl2.Text = "(January - " & buwanstring & ")"
+            '===============================================
+
+
+            '=================================
+            'MONTH
+            Dim m1 As String
+            Dim m2 As String
+            Dim m3 As String
+            Dim m4 As String
+            Dim m5 As String
+            Dim m6 As String
+            Dim m7 As String
+            Dim m8 As String
+            Dim m9 As String
+            Dim m10 As String
+            Dim m11 As String
+            Dim m12 As String
+
+
+
+            Dim homedbbuwan As Integer
+            Dim a As Integer
+
+            a = Format(DateTimePicker1.Value, "MM")
+
+            homedbbuwan = a - 1
+
+            If homedbbuwan = 1 Then
+                m1 = "1"
+                m2 = ""
+                m3 = ""
+                m4 = ""
+                m5 = ""
+                m6 = ""
+                m7 = ""
+                m8 = ""
+                m9 = ""
+                m10 = ""
+                m11 = ""
+                m12 = ""
+            ElseIf homedbbuwan = 2 Then
+                m1 = "1"
+                m2 = "2"
+                m3 = ""
+                m4 = ""
+                m5 = ""
+                m6 = ""
+                m7 = ""
+                m8 = ""
+                m9 = ""
+                m10 = ""
+                m11 = ""
+                m12 = ""
+            ElseIf homedbbuwan = 3 Then
+                m1 = "1"
+                m2 = "2"
+                m3 = "3"
+                m4 = ""
+                m5 = ""
+                m6 = ""
+                m7 = ""
+                m8 = ""
+                m9 = ""
+                m10 = ""
+                m11 = ""
+                m12 = ""
+            ElseIf homedbbuwan = 4 Then
+                m1 = "1"
+                m2 = "2"
+                m3 = "3"
+                m4 = "4"
+                m5 = ""
+                m6 = ""
+                m7 = ""
+                m8 = ""
+                m9 = ""
+                m10 = ""
+                m11 = ""
+                m12 = ""
+            ElseIf homedbbuwan = 5 Then
+                m1 = "1"
+                m2 = "2"
+                m3 = "3"
+                m4 = "4"
+                m5 = "5"
+                m6 = ""
+                m7 = ""
+                m8 = ""
+                m9 = ""
+                m10 = ""
+                m11 = ""
+                m12 = ""
+            ElseIf homedbbuwan = 6 Then
+                m1 = "1"
+                m2 = "2"
+                m3 = "3"
+                m4 = "4"
+                m5 = "5"
+                m6 = "6"
+                m7 = ""
+                m8 = ""
+                m9 = ""
+                m10 = ""
+                m11 = ""
+                m12 = ""
+            ElseIf homedbbuwan = 7 Then
+                m1 = "1"
+                m2 = "2"
+                m3 = "3"
+                m4 = "4"
+                m5 = "5"
+                m6 = "6"
+                m7 = "7"
+                m8 = ""
+                m9 = ""
+                m10 = ""
+                m11 = ""
+                m12 = ""
+            ElseIf homedbbuwan = 8 Then
+                m1 = "1"
+                m2 = "2"
+                m3 = "3"
+                m4 = "4"
+                m5 = "5"
+                m6 = "6"
+                m7 = "7"
+                m8 = "8"
+                m9 = ""
+                m10 = ""
+                m11 = ""
+                m12 = ""
+            ElseIf homedbbuwan = 9 Then
+                m1 = "1"
+                m2 = "2"
+                m3 = "3"
+                m4 = "4"
+                m5 = "5"
+                m6 = "6"
+                m7 = "7"
+                m8 = "8"
+                m9 = "9"
+                m10 = ""
+                m11 = ""
+                m12 = ""
+            ElseIf homedbbuwan = 10 Then
+                m1 = "1"
+                m2 = "2"
+                m3 = "3"
+                m4 = "4"
+                m5 = "5"
+                m6 = "6"
+                m7 = "7"
+                m8 = "8"
+                m9 = "9"
+                m10 = "10"
+                m11 = ""
+                m12 = ""
+            ElseIf homedbbuwan = 11 Then
+                m1 = "1"
+                m2 = "2"
+                m3 = "3"
+                m4 = "4"
+                m5 = "5"
+                m6 = "6"
+                m7 = "7"
+                m8 = "8"
+                m9 = "9"
+                m10 = "10"
+                m11 = "11"
+                m12 = ""
+            ElseIf homedbbuwan = 12 Then
+                m1 = "1"
+                m2 = "2"
+                m3 = "3"
+                m4 = "4"
+                m5 = "5"
+                m6 = "6"
+                m7 = "7"
+                m8 = "8"
+                m9 = "9"
+                m10 = "10"
+                m11 = "11"
+                m12 = "12"
+            End If
+
+
+
+
+
+            '=================================
+
+
+            DataGridView4.RowHeadersVisible = False
+            Myconnection = New OleDbConnection
+            Myconnection.ConnectionString = connString
+            dbds = New DataSet
+            tables = dbds.Tables
+            'dbda = New OleDbDataAdapter("Select * from tblitems where DATE BETWEEN CDATE('01/01/2021') AND CDATE('05/20/2021') ORDER BY DATE DESC", Myconnection)
+            'dbda = New OleDbDataAdapter("Select SUM(SMARTLOAD) as sum_load from tblitems where DATE BETWEEN CDATE('01/01/2021') AND CDATE('05/20/2021')", Myconnection)
+            dbda = New OleDbDataAdapter("SELECT SUM(MTDSMART) as sum_load FROM tblitems o WHERE (YEAR(o.DATE) IN ('" & homedbtaonx & "') AND MONTH(o.DATE) IN ('" & m1 & "','" & m3 & "','" & m5 & "','" & m7 & "','" & m8 & "','" & m10 & "','" & m12 & "') AND DAY(o.DATE) = '31')
+    OR (YEAR(o.DATE) IN ('" & homedbtaonx & "') AND MONTH(o.DATE) IN ('" & m4 & "','" & m6 & "','" & m9 & "','" & m11 & "') AND DAY(o.DATE) = '30')
+    OR (YEAR(o.DATE) IN ('" & homedbtaonx & "') AND MONTH(o.DATE) IN ('" & m2 & "') AND DAY(o.DATE) = '28')", Myconnection)
+            dbda.Fill(dbds, "tblitems")
+            Dim view As New DataView(tables(0))
+
+            source.DataSource = view
+            DataGridView4.DataSource = view
+
+
+            DataGridView4.Columns("ID").Visible = False
+            DataGridView4.Columns("MTDSUN").Visible = False
+            DataGridView4.Columns("SUNLOAD").Visible = False
+            DataGridView4.Columns("MTDRECRUITMENTSMART").Visible = False
+            DataGridView4.Columns("MTDRECRUITMENTSUN").Visible = False
+            DataGridView4.Columns("RECRUITMENTSMART").Visible = False
+            DataGridView4.Columns("RECRUITMENTSUN").Visible = False
+            DataGridView4.Columns("PAR").Visible = False
+
+            DataGridView4.Columns(6).DefaultCellStyle.Format = "N0"
+            DataGridView4.Columns(2).DefaultCellStyle.Format = "N0"
+
+        Catch ex As Exception
+            'MessageBox.Show(ex.Message)
+        End Try
+    End Sub
     Public Sub iloadmoto()
         Try
 
@@ -3210,5 +3568,119 @@ Public Class Form1
         Else
             CheckBox3.CheckState = CheckState.Checked
         End If
+    End Sub
+
+    Private Sub monthlyinventory_Click(sender As Object, e As EventArgs) Handles monthlyinventory.Click
+
+    End Sub
+
+    Private Sub distributiontree_Click(sender As Object, e As EventArgs) Handles distributiontree.Click
+        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\QSL DISTRIBUTION TREE")
+    End Sub
+
+    Private Sub sellout_Click(sender As Object, e As EventArgs) Handles sellout.Click
+        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\QSL SELL-OUT")
+    End Sub
+
+    Private Sub sellin_Click(sender As Object, e As EventArgs) Handles sellin.Click
+        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\QSL SELL-IN")
+    End Sub
+
+    Private Sub ytdsmartsellout_Click(sender As Object, e As EventArgs) Handles ytdsmartsellout.Click
+        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\QSL YTD SELL-OUT")
+    End Sub
+
+    Private Sub retailersimupgrade_Click(sender As Object, e As EventArgs) Handles retailersimupgrade.Click
+        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\Retailer Sim Upgrade")
+    End Sub
+
+    Private Sub loadledger_Click(sender As Object, e As EventArgs) Handles loadledger.Click
+        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\LOAD LEDGER")
+    End Sub
+
+    Private Sub omms_Click(sender As Object, e As EventArgs) Handles omms.Click
+        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\OMMS")
+    End Sub
+
+    Private Sub loadtrend_Click(sender As Object, e As EventArgs) Handles loadtrend.Click
+        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\LOAD TREND")
+    End Sub
+
+    Private Sub taggedvsencoded_Click(sender As Object, e As EventArgs) Handles taggedvsencoded.Click
+        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\_Report RD")
+    End Sub
+
+    Private Sub amr_Click(sender As Object, e As EventArgs) Handles amr.Click
+        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\_Report RD")
+    End Sub
+
+    Private Sub qslmanpower_Click(sender As Object, e As EventArgs) Handles qslmanpower.Click
+        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\_Report RD")
+    End Sub
+
+    Private Sub DataGridView3_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView3.SelectionChanged
+        Dim haha As String
+        Dim ge As Decimal
+        Dim current_row As Integer = DataGridView3.CurrentRow.Index
+        Debug.Print(current_row.ToString)
+
+
+
+        haha = DataGridView3(0, current_row).Value.ToString
+        ge = haha
+        homedbtxtbox1.Text = ge.ToString("#,##0")
+
+
+    End Sub
+
+    Private Sub DataGridView4_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView4.SelectionChanged
+        Dim haha As String
+        Dim ge As Decimal
+        Dim current_row As Integer = DataGridView4.CurrentRow.Index
+        Debug.Print(current_row.ToString)
+
+
+
+        haha = DataGridView4(0, current_row).Value.ToString
+        ge = haha
+        homedbtxtbox2.Text = ge.ToString("#,##0")
+
+
+        Dim awit As Long
+        Dim a As Long
+        Dim b As Long
+        Dim output As String
+
+        a = homedbtxtbox1.Text
+        b = homedbtxtbox2.Text
+        awit = a - b
+
+        output = awit.ToString("N0")
+        txtbox1diff.Text = output
+
+
+
+        '============================
+        'percentage
+        Dim negapasi As String
+
+        Dim percawit As Decimal
+        Dim perca As Decimal
+        Dim percb As Decimal
+        Dim percoutput As String
+
+        perca = txtbox1diff.Text
+        percb = homedbtxtbox1.Text
+        percawit = perca / percb * 100
+
+        If percawit <= 0 Then
+            negapasi = ""
+
+        Else
+            negapasi = "+"
+        End If
+        percoutput = percawit.ToString("N2")
+
+        homedbperc.Text = "" & negapasi & "" & percoutput & "%"
     End Sub
 End Class

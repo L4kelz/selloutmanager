@@ -20,17 +20,17 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle41 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle42 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle43 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle44 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle45 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
+        Dim DataGridViewCellStyle46 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle47 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle48 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle49 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle50 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.theday = New System.Windows.Forms.TextBox()
         Me.nodays = New System.Windows.Forms.TextBox()
         Me.year = New System.Windows.Forms.TextBox()
@@ -150,6 +150,16 @@ Partial Class Form1
         Me.Label21 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tab_home = New System.Windows.Forms.TabPage()
+        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.monthlyinventory = New System.Windows.Forms.Button()
+        Me.qslmanpower = New System.Windows.Forms.Button()
+        Me.amr = New System.Windows.Forms.Button()
+        Me.taggedvsencoded = New System.Windows.Forms.Button()
+        Me.retailersimupgrade = New System.Windows.Forms.Button()
+        Me.sellin = New System.Windows.Forms.Button()
+        Me.sellout = New System.Windows.Forms.Button()
+        Me.distributiontree = New System.Windows.Forms.Button()
+        Me.ytdsmartsellout = New System.Windows.Forms.Button()
         Me.loadtrend = New System.Windows.Forms.Button()
         Me.omms = New System.Windows.Forms.Button()
         Me.loadledger = New System.Windows.Forms.Button()
@@ -192,6 +202,7 @@ Partial Class Form1
         Me.dblbl9 = New System.Windows.Forms.Label()
         Me.dblbl8 = New System.Windows.Forms.Label()
         Me.dblbl7 = New System.Windows.Forms.Label()
+        Me.dbLabel9 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.dbtb9 = New System.Windows.Forms.TextBox()
         Me.dblbl6 = New System.Windows.Forms.Label()
@@ -215,7 +226,6 @@ Partial Class Form1
         Me.showdetails = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.dbLabel9 = New System.Windows.Forms.Label()
         Me.dbbtnexportbymonth = New System.Windows.Forms.Button()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.dbbtnviewbymonth = New System.Windows.Forms.Button()
@@ -261,11 +271,22 @@ Partial Class Form1
         Me.TblitemsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TblitemsTableAdapter = New Daily_Sellout.ItemsDataSetTableAdapters.tblitemsTableAdapter()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.homedbtxtbox1 = New System.Windows.Forms.TextBox()
+        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.homedbtxtbox2 = New System.Windows.Forms.TextBox()
+        Me.homedblbl1 = New System.Windows.Forms.Label()
+        Me.homedbmonthlbl1 = New System.Windows.Forms.Label()
+        Me.homedblbl2 = New System.Windows.Forms.Label()
+        Me.homedbmonthlbl2 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtbox1diff = New System.Windows.Forms.TextBox()
+        Me.homedbperc = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.tab_home.SuspendLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tab_sellout.SuspendLayout()
         Me.troubleshoot.SuspendLayout()
         Me.tab_db.SuspendLayout()
@@ -278,6 +299,7 @@ Partial Class Form1
         CType(Me.ItemsDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ItemsDataSetBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblitemsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'theday
@@ -753,51 +775,51 @@ Partial Class Form1
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.AllowUserToResizeColumns = False
         Me.DataGridView1.AllowUserToResizeRows = False
-        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle21
+        DataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle41
         Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.DataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
-        DataGridViewCellStyle22.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle22.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle22
+        DataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        DataGridViewCellStyle42.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle42.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle42.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        DataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle42
         Me.DataGridView1.ColumnHeadersHeight = 30
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle23.NullValue = Nothing
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle43.NullValue = Nothing
+        DataGridViewCellStyle43.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        DataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle43
         Me.DataGridView1.EnableHeadersVisualStyles = False
         Me.DataGridView1.GridColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.DataGridView1.Location = New System.Drawing.Point(317, 24)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle44
         Me.DataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle25.ForeColor = System.Drawing.Color.White
-        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle25
+        DataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle45.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle45.ForeColor = System.Drawing.Color.White
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle45
         Me.DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.DataGridView1.Size = New System.Drawing.Size(500, 558)
         Me.DataGridView1.TabIndex = 45
@@ -1045,7 +1067,6 @@ Partial Class Form1
         'enable_disable_input
         '
         Me.enable_disable_input.AutoSize = True
-        Me.enable_disable_input.Enabled = False
         Me.enable_disable_input.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(187, Byte), Integer))
         Me.enable_disable_input.FlatAppearance.BorderSize = 0
         Me.enable_disable_input.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(119, Byte), Integer), CType(CType(187, Byte), Integer))
@@ -1575,6 +1596,26 @@ Partial Class Form1
         'tab_home
         '
         Me.tab_home.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        Me.tab_home.Controls.Add(Me.homedbperc)
+        Me.tab_home.Controls.Add(Me.txtbox1diff)
+        Me.tab_home.Controls.Add(Me.Label6)
+        Me.tab_home.Controls.Add(Me.homedbmonthlbl2)
+        Me.tab_home.Controls.Add(Me.homedblbl2)
+        Me.tab_home.Controls.Add(Me.homedbmonthlbl1)
+        Me.tab_home.Controls.Add(Me.homedblbl1)
+        Me.tab_home.Controls.Add(Me.homedbtxtbox2)
+        Me.tab_home.Controls.Add(Me.DataGridView4)
+        Me.tab_home.Controls.Add(Me.homedbtxtbox1)
+        Me.tab_home.Controls.Add(Me.DataGridView3)
+        Me.tab_home.Controls.Add(Me.monthlyinventory)
+        Me.tab_home.Controls.Add(Me.qslmanpower)
+        Me.tab_home.Controls.Add(Me.amr)
+        Me.tab_home.Controls.Add(Me.taggedvsencoded)
+        Me.tab_home.Controls.Add(Me.retailersimupgrade)
+        Me.tab_home.Controls.Add(Me.sellin)
+        Me.tab_home.Controls.Add(Me.sellout)
+        Me.tab_home.Controls.Add(Me.distributiontree)
+        Me.tab_home.Controls.Add(Me.ytdsmartsellout)
         Me.tab_home.Controls.Add(Me.loadtrend)
         Me.tab_home.Controls.Add(Me.omms)
         Me.tab_home.Controls.Add(Me.loadledger)
@@ -1584,6 +1625,188 @@ Partial Class Form1
         Me.tab_home.Size = New System.Drawing.Size(834, 605)
         Me.tab_home.TabIndex = 0
         Me.tab_home.Text = "Home"
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Enabled = False
+        Me.DataGridView3.Location = New System.Drawing.Point(827, 523)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.Size = New System.Drawing.Size(132, 28)
+        Me.DataGridView3.TabIndex = 128
+        Me.DataGridView3.TabStop = False
+        '
+        'monthlyinventory
+        '
+        Me.monthlyinventory.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.monthlyinventory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.monthlyinventory.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.monthlyinventory.FlatAppearance.BorderSize = 0
+        Me.monthlyinventory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.monthlyinventory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.monthlyinventory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.monthlyinventory.Font = New System.Drawing.Font("Volte", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.monthlyinventory.ForeColor = System.Drawing.Color.White
+        Me.monthlyinventory.Location = New System.Drawing.Point(38, 75)
+        Me.monthlyinventory.Margin = New System.Windows.Forms.Padding(0)
+        Me.monthlyinventory.Name = "monthlyinventory"
+        Me.monthlyinventory.Size = New System.Drawing.Size(176, 48)
+        Me.monthlyinventory.TabIndex = 127
+        Me.monthlyinventory.TabStop = False
+        Me.monthlyinventory.Text = "MONTHLY INVENTORY"
+        Me.monthlyinventory.UseVisualStyleBackColor = True
+        '
+        'qslmanpower
+        '
+        Me.qslmanpower.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.qslmanpower.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.qslmanpower.FlatAppearance.BorderSize = 0
+        Me.qslmanpower.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.qslmanpower.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.qslmanpower.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.qslmanpower.Font = New System.Drawing.Font("Volte", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.qslmanpower.ForeColor = System.Drawing.Color.White
+        Me.qslmanpower.Location = New System.Drawing.Point(244, 447)
+        Me.qslmanpower.Margin = New System.Windows.Forms.Padding(0)
+        Me.qslmanpower.Name = "qslmanpower"
+        Me.qslmanpower.Size = New System.Drawing.Size(176, 48)
+        Me.qslmanpower.TabIndex = 125
+        Me.qslmanpower.TabStop = False
+        Me.qslmanpower.Text = "QSL MANPOWER"
+        Me.qslmanpower.UseVisualStyleBackColor = False
+        '
+        'amr
+        '
+        Me.amr.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.amr.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.amr.FlatAppearance.BorderSize = 0
+        Me.amr.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.amr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.amr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.amr.Font = New System.Drawing.Font("Volte", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.amr.ForeColor = System.Drawing.Color.White
+        Me.amr.Location = New System.Drawing.Point(244, 373)
+        Me.amr.Margin = New System.Windows.Forms.Padding(0)
+        Me.amr.Name = "amr"
+        Me.amr.Size = New System.Drawing.Size(176, 48)
+        Me.amr.TabIndex = 124
+        Me.amr.TabStop = False
+        Me.amr.Text = "AMR STRUCTURE"
+        Me.amr.UseVisualStyleBackColor = False
+        '
+        'taggedvsencoded
+        '
+        Me.taggedvsencoded.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.taggedvsencoded.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.taggedvsencoded.FlatAppearance.BorderSize = 0
+        Me.taggedvsencoded.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.taggedvsencoded.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.taggedvsencoded.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.taggedvsencoded.Font = New System.Drawing.Font("Volte", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.taggedvsencoded.ForeColor = System.Drawing.Color.White
+        Me.taggedvsencoded.Location = New System.Drawing.Point(244, 297)
+        Me.taggedvsencoded.Margin = New System.Windows.Forms.Padding(0)
+        Me.taggedvsencoded.Name = "taggedvsencoded"
+        Me.taggedvsencoded.Size = New System.Drawing.Size(176, 48)
+        Me.taggedvsencoded.TabIndex = 123
+        Me.taggedvsencoded.TabStop = False
+        Me.taggedvsencoded.Text = "TAGGED VS ENCODED"
+        Me.taggedvsencoded.UseVisualStyleBackColor = False
+        '
+        'retailersimupgrade
+        '
+        Me.retailersimupgrade.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.retailersimupgrade.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.retailersimupgrade.FlatAppearance.BorderSize = 0
+        Me.retailersimupgrade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.retailersimupgrade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.retailersimupgrade.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.retailersimupgrade.Font = New System.Drawing.Font("Volte", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.retailersimupgrade.ForeColor = System.Drawing.Color.White
+        Me.retailersimupgrade.Location = New System.Drawing.Point(38, 447)
+        Me.retailersimupgrade.Margin = New System.Windows.Forms.Padding(0)
+        Me.retailersimupgrade.Name = "retailersimupgrade"
+        Me.retailersimupgrade.Size = New System.Drawing.Size(176, 48)
+        Me.retailersimupgrade.TabIndex = 122
+        Me.retailersimupgrade.TabStop = False
+        Me.retailersimupgrade.Text = "RETAILER SIM UPGRADE"
+        Me.retailersimupgrade.UseVisualStyleBackColor = True
+        '
+        'sellin
+        '
+        Me.sellin.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.sellin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.sellin.FlatAppearance.BorderSize = 0
+        Me.sellin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.sellin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.sellin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.sellin.Font = New System.Drawing.Font("Volte", 15.75!)
+        Me.sellin.ForeColor = System.Drawing.Color.White
+        Me.sellin.Location = New System.Drawing.Point(38, 297)
+        Me.sellin.Margin = New System.Windows.Forms.Padding(0)
+        Me.sellin.Name = "sellin"
+        Me.sellin.Size = New System.Drawing.Size(176, 48)
+        Me.sellin.TabIndex = 121
+        Me.sellin.TabStop = False
+        Me.sellin.Text = "SELLIN"
+        Me.sellin.UseVisualStyleBackColor = True
+        '
+        'sellout
+        '
+        Me.sellout.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.sellout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.sellout.FlatAppearance.BorderSize = 0
+        Me.sellout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.sellout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.sellout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.sellout.Font = New System.Drawing.Font("Volte", 15.75!)
+        Me.sellout.ForeColor = System.Drawing.Color.White
+        Me.sellout.Location = New System.Drawing.Point(38, 223)
+        Me.sellout.Margin = New System.Windows.Forms.Padding(0)
+        Me.sellout.Name = "sellout"
+        Me.sellout.Size = New System.Drawing.Size(176, 48)
+        Me.sellout.TabIndex = 120
+        Me.sellout.TabStop = False
+        Me.sellout.Text = "SELLOUT"
+        Me.sellout.UseVisualStyleBackColor = True
+        '
+        'distributiontree
+        '
+        Me.distributiontree.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.distributiontree.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.distributiontree.FlatAppearance.BorderSize = 0
+        Me.distributiontree.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.distributiontree.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.distributiontree.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.distributiontree.Font = New System.Drawing.Font("Volte", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.distributiontree.ForeColor = System.Drawing.Color.White
+        Me.distributiontree.Location = New System.Drawing.Point(38, 149)
+        Me.distributiontree.Margin = New System.Windows.Forms.Padding(0)
+        Me.distributiontree.Name = "distributiontree"
+        Me.distributiontree.Size = New System.Drawing.Size(176, 48)
+        Me.distributiontree.TabIndex = 119
+        Me.distributiontree.TabStop = False
+        Me.distributiontree.Text = "DISTRIBUTION TREE"
+        Me.distributiontree.UseVisualStyleBackColor = True
+        '
+        'ytdsmartsellout
+        '
+        Me.ytdsmartsellout.BackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.ytdsmartsellout.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.ytdsmartsellout.FlatAppearance.BorderSize = 0
+        Me.ytdsmartsellout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.ytdsmartsellout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        Me.ytdsmartsellout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ytdsmartsellout.Font = New System.Drawing.Font("Volte", 15.75!)
+        Me.ytdsmartsellout.ForeColor = System.Drawing.Color.White
+        Me.ytdsmartsellout.Location = New System.Drawing.Point(38, 371)
+        Me.ytdsmartsellout.Margin = New System.Windows.Forms.Padding(0)
+        Me.ytdsmartsellout.Name = "ytdsmartsellout"
+        Me.ytdsmartsellout.Size = New System.Drawing.Size(176, 48)
+        Me.ytdsmartsellout.TabIndex = 118
+        Me.ytdsmartsellout.TabStop = False
+        Me.ytdsmartsellout.Text = "YTD SELLOUT"
+        Me.ytdsmartsellout.UseVisualStyleBackColor = False
         '
         'loadtrend
         '
@@ -1595,14 +1818,14 @@ Partial Class Form1
         Me.loadtrend.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.loadtrend.Font = New System.Drawing.Font("Volte", 15.75!)
         Me.loadtrend.ForeColor = System.Drawing.Color.White
-        Me.loadtrend.Location = New System.Drawing.Point(524, 96)
+        Me.loadtrend.Location = New System.Drawing.Point(244, 223)
         Me.loadtrend.Margin = New System.Windows.Forms.Padding(0)
         Me.loadtrend.Name = "loadtrend"
         Me.loadtrend.Size = New System.Drawing.Size(176, 48)
         Me.loadtrend.TabIndex = 117
+        Me.loadtrend.TabStop = False
         Me.loadtrend.Text = "LOAD TREND"
         Me.loadtrend.UseVisualStyleBackColor = False
-        Me.loadtrend.Visible = False
         '
         'omms
         '
@@ -1614,14 +1837,14 @@ Partial Class Form1
         Me.omms.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.omms.Font = New System.Drawing.Font("Volte", 15.75!)
         Me.omms.ForeColor = System.Drawing.Color.White
-        Me.omms.Location = New System.Drawing.Point(294, 96)
+        Me.omms.Location = New System.Drawing.Point(244, 149)
         Me.omms.Margin = New System.Windows.Forms.Padding(0)
         Me.omms.Name = "omms"
         Me.omms.Size = New System.Drawing.Size(176, 48)
         Me.omms.TabIndex = 116
+        Me.omms.TabStop = False
         Me.omms.Text = "OMMS"
         Me.omms.UseVisualStyleBackColor = False
-        Me.omms.Visible = False
         '
         'loadledger
         '
@@ -1633,14 +1856,14 @@ Partial Class Form1
         Me.loadledger.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.loadledger.Font = New System.Drawing.Font("Volte", 15.75!)
         Me.loadledger.ForeColor = System.Drawing.Color.White
-        Me.loadledger.Location = New System.Drawing.Point(61, 96)
+        Me.loadledger.Location = New System.Drawing.Point(244, 75)
         Me.loadledger.Margin = New System.Windows.Forms.Padding(0)
         Me.loadledger.Name = "loadledger"
         Me.loadledger.Size = New System.Drawing.Size(176, 48)
         Me.loadledger.TabIndex = 115
+        Me.loadledger.TabStop = False
         Me.loadledger.Text = "LOAD LEDGER"
-        Me.loadledger.UseVisualStyleBackColor = False
-        Me.loadledger.Visible = False
+        Me.loadledger.UseVisualStyleBackColor = True
         '
         'tab_sellout
         '
@@ -2171,6 +2394,15 @@ Partial Class Form1
         Me.dblbl7.TabIndex = 33
         Me.dblbl7.Text = "--"
         '
+        'dbLabel9
+        '
+        Me.dbLabel9.AutoSize = True
+        Me.dbLabel9.Location = New System.Drawing.Point(26, -9)
+        Me.dbLabel9.Name = "dbLabel9"
+        Me.dbLabel9.Size = New System.Drawing.Size(25, 13)
+        Me.dbLabel9.TabIndex = 19
+        Me.dbLabel9.Text = "aaa"
+        '
         'Label27
         '
         Me.Label27.AutoSize = True
@@ -2406,51 +2638,51 @@ Partial Class Form1
         Me.DataGridView2.AllowUserToDeleteRows = False
         Me.DataGridView2.AllowUserToResizeColumns = False
         Me.DataGridView2.AllowUserToResizeRows = False
-        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle26
+        DataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.DataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle46
         Me.DataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.DataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.DataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
-        DataGridViewCellStyle27.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle27.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle27
+        DataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle47.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(45, Byte), Integer))
+        DataGridViewCellStyle47.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle47.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle47.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        DataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle47
         Me.DataGridView2.ColumnHeadersHeight = 30
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle28.NullValue = Nothing
-        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle28
+        DataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle48.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle48.NullValue = Nothing
+        DataGridViewCellStyle48.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        DataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView2.DefaultCellStyle = DataGridViewCellStyle48
         Me.DataGridView2.EnableHeadersVisualStyles = False
         Me.DataGridView2.GridColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
         Me.DataGridView2.Location = New System.Drawing.Point(27, 80)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.ReadOnly = True
         Me.DataGridView2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle29.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle49.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle49.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView2.RowHeadersDefaultCellStyle = DataGridViewCellStyle49
         Me.DataGridView2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle30.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
-        DataGridViewCellStyle30.ForeColor = System.Drawing.Color.White
-        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle30
+        DataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer), CType(CType(60, Byte), Integer))
+        DataGridViewCellStyle50.ForeColor = System.Drawing.Color.White
+        Me.DataGridView2.RowsDefaultCellStyle = DataGridViewCellStyle50
         Me.DataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DataGridView2.Size = New System.Drawing.Size(790, 373)
         Me.DataGridView2.TabIndex = 73
@@ -2467,15 +2699,6 @@ Partial Class Form1
         Me.RichTextBox1.TabIndex = 74
         Me.RichTextBox1.Text = ""
         Me.RichTextBox1.Visible = False
-        '
-        'dbLabel9
-        '
-        Me.dbLabel9.AutoSize = True
-        Me.dbLabel9.Location = New System.Drawing.Point(26, -9)
-        Me.dbLabel9.Name = "dbLabel9"
-        Me.dbLabel9.Size = New System.Drawing.Size(25, 13)
-        Me.dbLabel9.TabIndex = 19
-        Me.dbLabel9.Text = "aaa"
         '
         'dbbtnexportbymonth
         '
@@ -3041,6 +3264,127 @@ Partial Class Form1
         '
         Me.TblitemsTableAdapter.ClearBeforeFill = True
         '
+        'homedbtxtbox1
+        '
+        Me.homedbtxtbox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        Me.homedbtxtbox1.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.homedbtxtbox1.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.homedbtxtbox1.ForeColor = System.Drawing.Color.Silver
+        Me.homedbtxtbox1.Location = New System.Drawing.Point(500, 146)
+        Me.homedbtxtbox1.Multiline = True
+        Me.homedbtxtbox1.Name = "homedbtxtbox1"
+        Me.homedbtxtbox1.ReadOnly = True
+        Me.homedbtxtbox1.Size = New System.Drawing.Size(158, 28)
+        Me.homedbtxtbox1.TabIndex = 130
+        Me.homedbtxtbox1.TabStop = False
+        Me.homedbtxtbox1.Text = "--"
+        '
+        'DataGridView4
+        '
+        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView4.Enabled = False
+        Me.DataGridView4.Location = New System.Drawing.Point(827, 557)
+        Me.DataGridView4.Name = "DataGridView4"
+        Me.DataGridView4.Size = New System.Drawing.Size(132, 32)
+        Me.DataGridView4.TabIndex = 131
+        Me.DataGridView4.TabStop = False
+        '
+        'homedbtxtbox2
+        '
+        Me.homedbtxtbox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        Me.homedbtxtbox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.homedbtxtbox2.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.homedbtxtbox2.ForeColor = System.Drawing.Color.Silver
+        Me.homedbtxtbox2.Location = New System.Drawing.Point(500, 209)
+        Me.homedbtxtbox2.Multiline = True
+        Me.homedbtxtbox2.Name = "homedbtxtbox2"
+        Me.homedbtxtbox2.ReadOnly = True
+        Me.homedbtxtbox2.Size = New System.Drawing.Size(158, 28)
+        Me.homedbtxtbox2.TabIndex = 132
+        Me.homedbtxtbox2.TabStop = False
+        Me.homedbtxtbox2.Text = "--"
+        '
+        'homedblbl1
+        '
+        Me.homedblbl1.AutoSize = True
+        Me.homedblbl1.Font = New System.Drawing.Font("Volte Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.homedblbl1.ForeColor = System.Drawing.Color.White
+        Me.homedblbl1.Location = New System.Drawing.Point(496, 123)
+        Me.homedblbl1.Name = "homedblbl1"
+        Me.homedblbl1.Size = New System.Drawing.Size(29, 19)
+        Me.homedblbl1.TabIndex = 134
+        Me.homedblbl1.Text = "----"
+        '
+        'homedbmonthlbl1
+        '
+        Me.homedbmonthlbl1.AutoSize = True
+        Me.homedbmonthlbl1.Font = New System.Drawing.Font("Volte Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.homedbmonthlbl1.ForeColor = System.Drawing.Color.White
+        Me.homedbmonthlbl1.Location = New System.Drawing.Point(574, 123)
+        Me.homedbmonthlbl1.Name = "homedbmonthlbl1"
+        Me.homedbmonthlbl1.Size = New System.Drawing.Size(19, 19)
+        Me.homedbmonthlbl1.TabIndex = 135
+        Me.homedbmonthlbl1.Text = "--"
+        '
+        'homedblbl2
+        '
+        Me.homedblbl2.AutoSize = True
+        Me.homedblbl2.Font = New System.Drawing.Font("Volte Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.homedblbl2.ForeColor = System.Drawing.Color.White
+        Me.homedblbl2.Location = New System.Drawing.Point(496, 186)
+        Me.homedblbl2.Name = "homedblbl2"
+        Me.homedblbl2.Size = New System.Drawing.Size(29, 19)
+        Me.homedblbl2.TabIndex = 136
+        Me.homedblbl2.Text = "----"
+        '
+        'homedbmonthlbl2
+        '
+        Me.homedbmonthlbl2.AutoSize = True
+        Me.homedbmonthlbl2.Font = New System.Drawing.Font("Volte Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.homedbmonthlbl2.ForeColor = System.Drawing.Color.White
+        Me.homedbmonthlbl2.Location = New System.Drawing.Point(574, 186)
+        Me.homedbmonthlbl2.Name = "homedbmonthlbl2"
+        Me.homedbmonthlbl2.Size = New System.Drawing.Size(19, 19)
+        Me.homedbmonthlbl2.TabIndex = 137
+        Me.homedbmonthlbl2.Text = "--"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Volte Semibold", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(496, 245)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(95, 19)
+        Me.Label6.TabIndex = 138
+        Me.Label6.Text = "DIFFERENCE"
+        '
+        'txtbox1diff
+        '
+        Me.txtbox1diff.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(37, Byte), Integer), CType(CType(38, Byte), Integer))
+        Me.txtbox1diff.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtbox1diff.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbox1diff.ForeColor = System.Drawing.Color.Silver
+        Me.txtbox1diff.Location = New System.Drawing.Point(500, 273)
+        Me.txtbox1diff.Multiline = True
+        Me.txtbox1diff.Name = "txtbox1diff"
+        Me.txtbox1diff.ReadOnly = True
+        Me.txtbox1diff.Size = New System.Drawing.Size(158, 28)
+        Me.txtbox1diff.TabIndex = 139
+        Me.txtbox1diff.TabStop = False
+        Me.txtbox1diff.Text = "--"
+        '
+        'homedbperc
+        '
+        Me.homedbperc.AutoSize = True
+        Me.homedbperc.Font = New System.Drawing.Font("Volte", 48.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.homedbperc.ForeColor = System.Drawing.Color.Red
+        Me.homedbperc.Location = New System.Drawing.Point(493, 330)
+        Me.homedbperc.Name = "homedbperc"
+        Me.homedbperc.Size = New System.Drawing.Size(75, 77)
+        Me.homedbperc.TabIndex = 140
+        Me.homedbperc.Text = "%"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3136,6 +3480,8 @@ Partial Class Form1
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.tab_home.ResumeLayout(False)
+        Me.tab_home.PerformLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tab_sellout.ResumeLayout(False)
         Me.tab_sellout.PerformLayout()
         Me.troubleshoot.ResumeLayout(False)
@@ -3155,6 +3501,7 @@ Partial Class Form1
         CType(Me.ItemsDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ItemsDataSetBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblitemsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -3389,4 +3736,24 @@ Partial Class Form1
     Friend WithEvents dbbalawanglbl As Label
     Friend WithEvents btnexcesscomputer As Button
     Friend WithEvents dbtbexcessbalawang As TextBox
+    Friend WithEvents ytdsmartsellout As Button
+    Friend WithEvents qslmanpower As Button
+    Friend WithEvents amr As Button
+    Friend WithEvents taggedvsencoded As Button
+    Friend WithEvents retailersimupgrade As Button
+    Friend WithEvents sellin As Button
+    Friend WithEvents sellout As Button
+    Friend WithEvents distributiontree As Button
+    Friend WithEvents monthlyinventory As Button
+    Friend WithEvents DataGridView3 As DataGridView
+    Friend WithEvents homedbtxtbox1 As TextBox
+    Friend WithEvents DataGridView4 As DataGridView
+    Friend WithEvents homedbtxtbox2 As TextBox
+    Friend WithEvents homedblbl1 As Label
+    Friend WithEvents homedbmonthlbl1 As Label
+    Friend WithEvents homedbmonthlbl2 As Label
+    Friend WithEvents homedblbl2 As Label
+    Friend WithEvents txtbox1diff As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents homedbperc As Label
 End Class

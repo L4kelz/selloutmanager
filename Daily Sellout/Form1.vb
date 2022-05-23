@@ -17,8 +17,8 @@ Imports File = Google.Apis.Drive.v2.Data.File
 
 
 Public Class Form1
-
-
+    Dim dropdown_constring As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:\Users\BRYNER\Documents\Visual Studio 2010\projects\Daily Sellout\Daily Sellout\bin\Debug\Items.accdb")
+    Dim dailyreport_constring As New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:\Users\BRYNER\Documents\Visual Studio 2010\projects\Daily Sellout\Daily Sellout\bin\Debug\Items.accdb")
     Dim edit_connString As String = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=C:\Users\BRYNER\Documents\Visual Studio 2010\projects\Daily Sellout\Daily Sellout\bin\Debug\Items.accdb"
     Dim edit_Myconnection As OleDbConnection
     Dim edit_dbda As OleDbDataAdapter
@@ -29,6 +29,8 @@ Public Class Form1
     Public edit_result As Integer
     Public edit_Sql As String
 
+    Dim dr As OleDbDataReader
+    Dim daily_dr As OleDbDataReader
 
     Dim SourcePath As String = "C:\Users\BRYNER\OneDrive\dailysellout_database\Items.accdb"
     Dim SourcePath2 As String = "C:\Users\QSL WIRELESS\OneDrive\dailysellout_database\Items.accdb"
@@ -40,6 +42,10 @@ Public Class Form1
     Dim brynerdatabase As String = "c:\Users\BRYNER\Documents\Visual Studio 2010\Projects\Daily Sellout\Daily Sellout\bin\Debug\Items.accdb"
     Dim bryneronedrive As String = "C:\Users\BRYNER\OneDrive\dailysellout_database\Items.accdb"
     Dim qslwirelessonedrive As String = "C:\Users\QSL WIRELESS\OneDrive\dailysellout_database\Items.accdb"
+
+
+    Dim pathdirectory As String = "----"
+
 #Region " Move Form "
 
     ' [ Move Form ]
@@ -139,6 +145,7 @@ Public Class Form1
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         downloaddatafromCloud()
+        comboboxdirectory()
 
         Try
 
@@ -152,7 +159,9 @@ Public Class Form1
             'iloadmoto2()
             homedb1()
             homedb2()
-            'DataGridView1.Rows(DataGridView1.RowCount - 1).Cells(2).Selected = True
+
+            dailyreport() 'daily report sa home ito
+
             ako()
             etoitawagmo()
             mtdrecruitmenttotal()
@@ -1658,6 +1667,7 @@ Public Class Form1
                 iloadmoto()
                 'iloadmoto2()
                 uploaddatatoCloud()
+                dailyreport()
             Else
                 MsgBox("No item record has been saved!!", vbExclamation)
             End If
@@ -2655,7 +2665,7 @@ Public Class Form1
                     cleartextfields()
                     dbLabel9.Text = ""
                     uploaddatatoCloud()
-
+                    dailyreport()
                     'DELETE RECORD FILE
 
                 Else
@@ -3455,6 +3465,7 @@ Public Class Form1
                     iloadmotoDB()
                     cleartextfields()
                     uploaddatatoCloud()
+                    dailyreport()
                 Else
                     MsgBox("No Record has been Updated!")
                 End If
@@ -3570,53 +3581,6 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub monthlyinventory_Click(sender As Object, e As EventArgs) Handles monthlyinventory.Click
-
-    End Sub
-
-    Private Sub distributiontree_Click(sender As Object, e As EventArgs) Handles distributiontree.Click
-        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\QSL DISTRIBUTION TREE")
-    End Sub
-
-    Private Sub sellout_Click(sender As Object, e As EventArgs) Handles sellout.Click
-        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\QSL SELL-OUT")
-    End Sub
-
-    Private Sub sellin_Click(sender As Object, e As EventArgs) Handles sellin.Click
-        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\QSL SELL-IN")
-    End Sub
-
-    Private Sub ytdsmartsellout_Click(sender As Object, e As EventArgs) Handles ytdsmartsellout.Click
-        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\QSL YTD SELL-OUT")
-    End Sub
-
-    Private Sub retailersimupgrade_Click(sender As Object, e As EventArgs) Handles retailersimupgrade.Click
-        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\Retailer Sim Upgrade")
-    End Sub
-
-    Private Sub loadledger_Click(sender As Object, e As EventArgs) Handles loadledger.Click
-        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\LOAD LEDGER")
-    End Sub
-
-    Private Sub omms_Click(sender As Object, e As EventArgs) Handles omms.Click
-        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\OMMS")
-    End Sub
-
-    Private Sub loadtrend_Click(sender As Object, e As EventArgs) Handles loadtrend.Click
-        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\LOAD TREND")
-    End Sub
-
-    Private Sub taggedvsencoded_Click(sender As Object, e As EventArgs) Handles taggedvsencoded.Click
-        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\_Report RD")
-    End Sub
-
-    Private Sub amr_Click(sender As Object, e As EventArgs) Handles amr.Click
-        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\_Report RD")
-    End Sub
-
-    Private Sub qslmanpower_Click(sender As Object, e As EventArgs) Handles qslmanpower.Click
-        Process.Start("D:\MAIN FILES\SMART RELATED WORKS\SMART RECORDS\Reports (IMPORTANT)\_Report RD")
-    End Sub
 
     Private Sub DataGridView3_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView3.SelectionChanged
         Dim haha As String
@@ -3675,12 +3639,185 @@ Public Class Form1
 
         If percawit <= 0 Then
             negapasi = ""
-
+            homedbperc.ForeColor = Color.Red
         Else
             negapasi = "+"
+            homedbperc.ForeColor = Color.Green
         End If
         percoutput = percawit.ToString("N2")
 
         homedbperc.Text = "" & negapasi & "" & percoutput & "%"
+    End Sub
+
+    Private Sub btn_directory_settings_Click(sender As Object, e As EventArgs) Handles btn_directory_settings.Click
+        qsldirectory.ShowDialog()
+    End Sub
+
+    Public Sub comboboxdirectory()
+
+        Try
+            dropdown_constring.Open()
+
+            directorydropdown.Items.Clear()
+            Dim cmd As New OleDbCommand
+            cmd.CommandText = "select * from qsldirectory order by ID asc"
+            cmd.Connection = dropdown_constring
+            dr = cmd.ExecuteReader
+            While dr.Read
+                directorydropdown.Items.Add(dr.GetString(1))
+
+            End While
+            dr.Close()
+            dropdown_constring.Close()
+            Me.directorydropdown.Items.Insert(0, "-Select Directory-")
+            Me.directorydropdown.SelectedItem = "-Select Directory-"
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Public Sub comboboxdirectory_path()
+
+        Dim asa As String
+        asa = directorydropdown.Text
+        If asa = "-Select Directory" Then
+            pathdirectory = "----"
+        Else
+            Try
+                dropdown_constring.Open()
+
+
+                Dim cmd As New OleDbCommand
+                cmd.CommandText = "select * from qsldirectory where dir_name = '" & asa & "'"
+                cmd.Connection = dropdown_constring
+                dr = cmd.ExecuteReader
+                While dr.Read
+
+                    pathdirectory = dr.GetString(2)
+                End While
+                dr.Close()
+                dropdown_constring.Close()
+
+            Catch ex As Exception
+
+            End Try
+        End If
+
+    End Sub
+
+    Private Sub directorydropdown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles directorydropdown.SelectedIndexChanged
+        If directorydropdown.Text = "-Select Directory-" Then
+            pathdirectory = "----"
+        Else
+            comboboxdirectory_path()
+        End If
+
+    End Sub
+
+    Private Sub btn_gotodir_Click(sender As Object, e As EventArgs) Handles btn_gotodir.Click
+        If pathdirectory = "----" Then
+            'do nothing
+        Else
+            Try
+                Process.Start(pathdirectory)
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+        End If
+
+    End Sub
+
+    Private Sub dailyreport()
+
+
+
+        Try
+            dailyreport_constring.Open()
+
+
+            Dim cmd1 As New OleDbCommand
+            'cmd1.CommandText = "Select * from tblitems where DATE = CDATE('5/22/2022')"
+            cmd1.CommandText = "SELECT TOP 1 * FROM tblitems ORDER BY ID DESC"
+            'cmd1.CommandText = "SELECT * FROM tblitems WHERE id=(SELECT max(id) FROM tblitems)"
+            cmd1.Connection = dailyreport_constring
+            daily_dr = cmd1.ExecuteReader
+            While daily_dr.Read
+                Dim comaconverter1 As Integer
+                lbldaily1.Text = daily_dr.GetDateTime(1)
+                comaconverter1 = daily_dr.GetInt32(6)
+                tbdaily1.Text = comaconverter1.ToString("#,##0")
+            End While
+            daily_dr.Close()
+            dailyreport_constring.Close()
+
+
+            dailyreport_sub()
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+    Private Sub dailyreport_sub()
+        Try
+            dailyreport_constring.Open()
+            Dim cmd1 As New OleDbCommand
+            'cmd1.CommandText = "Select * from tblitems where DATE = CDATE('5/22/2022')"
+            cmd1.CommandText = "SELECT TOP 2 * FROM tblitems ORDER BY ID DESC"
+            'cmd1.CommandText = "SELECT * FROM tblitems WHERE id=(SELECT max(id) FROM tblitems)"
+            cmd1.Connection = dailyreport_constring
+            daily_dr = cmd1.ExecuteReader
+            While daily_dr.Read
+                Dim comaconverter2 As Integer
+                lbldaily2.Text = daily_dr.GetDateTime(1)
+                comaconverter2 = daily_dr.GetInt32(6)
+                tbdaily2.Text = comaconverter2.ToString("#,##0")
+
+            End While
+            daily_dr.Close()
+            dailyreport_constring.Close()
+
+            'DIFFERENCE
+            Dim a As Long
+            Dim b As Long
+            Dim sum As Long
+
+            a = tbdaily1.Text
+            b = tbdaily2.Text
+
+            sum = a - b
+
+            Dim output As String = sum.ToString("N0")
+            tbdaily3.Text = output
+
+
+
+            'PERCENTAGE
+            Dim negapasi As String
+            Dim percawit As Decimal
+            Dim perca As Decimal
+            Dim percb As Decimal
+            Dim percoutput As String
+
+            perca = tbdaily3.Text
+            percb = tbdaily1.Text
+            percawit = perca / percb * 100
+
+            If percawit <= 0 Then
+                negapasi = ""
+                lbldailypercentage.ForeColor = Color.Red
+            Else
+                negapasi = "+"
+                lbldailypercentage.ForeColor = Color.Green
+            End If
+            percoutput = percawit.ToString("N2")
+
+            lbldailypercentage.Text = "" & negapasi & "" & percoutput & "%"
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 End Class

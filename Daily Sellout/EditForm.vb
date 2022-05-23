@@ -777,7 +777,7 @@ Public Class EditForm
 
 
     Private Sub dbbtnexportbymonth_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dbbtnexportbymonth.Click
-        ExportDialog.ShowDialog()
+
     End Sub
 
     Private Sub dbbtnviewbymonth_Click(sender As Object, e As EventArgs) Handles dbbtnviewbymonth.Click
